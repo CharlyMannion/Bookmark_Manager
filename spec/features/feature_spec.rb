@@ -13,7 +13,7 @@ feature BookmarkManager do
   feature 'Bookmark' do
     scenario 'view links' do
       visit '/bookmarks'
-      expect(page).to have_content("http://google.com", "http://bbc.co.uk")
+      expect(page).to have_content("http://google.com", "http://makersacademy.com")
     end
   end
 
