@@ -9,14 +9,14 @@ describe Bookmark do
     it 'returns all bookmarks' do
       connection = PG.connect(dbname: 'bookmark_manager_test')
 
-      Bookmark.create(url: "http://makersacademy.com")
-      Bookmark.create(url: "http://google.com")
-      Bookmark.create(url: "http://destroyallsoftware.com")
+      bookmark_1 = Bookmark.create(url: "http://makersacademy.com", title: "Makers")
+      bookmark_2 = Bookmark.create(url: "http://google.com", title: "Google")
+      bookmark_3 = Bookmark.create(url: "http://destroyallsoftware.com", title: "Destroy")
 
       expected_bookmarks = [
-        "http://makersacademy.com",
-        "http://google.com",
-        "http://destroyallsoftware.com"
+        bookmark_1,
+        bookmark_2,
+        bookmark_3
       ]
 
       expect(Bookmark.all).to eq expected_bookmarks
@@ -30,9 +30,8 @@ describe Bookmark do
     end
 
     it 'creates a new bookmark' do
-      Bookmark.create(url: 'http://testbookmark.com')
-
-      expect(Bookmark.all).to include 'http://testbookmark.com'
+      test_bookmark = Bookmark.create(url: 'http://testbookmark.com', title: 'test')
+      expect(Bookmark.all).to include test_bookmark
     end
   end
 
