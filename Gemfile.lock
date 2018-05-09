@@ -42,6 +42,7 @@ GEM
       rack-protection (= 2.0.1)
       tilt (~> 2.0)
     tilt (2.0.8)
+    uri-handler (1.0.2)
     xpath (3.0.0)
       nokogiri (~> 1.8)
 
@@ -53,6 +54,7 @@ DEPENDENCIES
   pg (~> 0.18.4)
   rspec
   sinatra
+  uri-handler (~> 1.0, >= 1.0.2)
 
 BUNDLED WITH
    1.16.1

@@ -1,6 +1,7 @@
 require 'bookmark'
 require 'pg'
 require 'spec_helper'
+require 'uri'
 
 describe Bookmark do
 
@@ -23,6 +24,10 @@ describe Bookmark do
   end
 
   describe '.create' do
+    it 'raises an error if url is invalid' do
+      expect { Bookmark.create(url: 'invalidurl.cop') }.to raise_error "invalid url"
+    end
+
     it 'creates a new bookmark' do
       Bookmark.create(url: 'http://testbookmark.com')
 

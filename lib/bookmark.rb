@@ -1,4 +1,5 @@
 require 'pg'
+require 'uri'
 
 class Bookmark
 
@@ -20,6 +21,7 @@ class Bookmark
       connection = PG.connect(dbname: 'bookmark_manager')
     end
 
+    raise 'invalid url' unless options[:url] =~ URI::regexp
     connection.exec("INSERT INTO bookmarks (url) VALUES('#{options[:url]}')")
   end
 
