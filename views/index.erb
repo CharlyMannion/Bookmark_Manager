@@ -1,7 +1,11 @@
 <ul>
-
+<% if flash[:notice] %>
+<div id='flash' class='notice'>
+<%= flash[:notice]%>
+</div>
+<% else %>
 <% @bookmarks.each do |bookmark| %>
   <li><%= bookmark %> </li>
 <%end%>
-
+<% end %>
 </ul>

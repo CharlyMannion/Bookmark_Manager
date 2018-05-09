@@ -9,4 +9,12 @@ feature 'Adding a new bookmark' do
     click_button('Submit')
     expect(page).to have_content 'http://testbookmark.com'
     end
+
+  scenario 'User tries to add an invalid url to Bookmark Manager' do
+  p  visit '/bookmarks/new'
+  p  fill_in('url', with: 'not a valid url')
+  p  click_button('Submit')
+  p  expect(page).not_to have_content "not a valid url"
+  p  expect(page).to have_content "invalid url"
+  end
   end

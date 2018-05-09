@@ -25,7 +25,8 @@ describe Bookmark do
 
   describe '.create' do
     it 'raises an error if url is invalid' do
-      expect { Bookmark.create(url: 'invalidurl.cop') }.to raise_error "invalid url"
+    Bookmark.create(url: 'invalidurl.cop')
+    expect(Bookmark.all).not_to include 'invalidurl.cop'
     end
 
     it 'creates a new bookmark' do
