@@ -8,9 +8,9 @@ describe Bookmark do
     it 'returns all bookmarks' do
       connection = PG.connect(dbname: 'bookmark_manager_test')
 
-      connection.exec("INSERT INTO bookmarks VALUES(1, 'http://makersacademy.com')")
-      connection.exec("INSERT INTO bookmarks VALUES(2, 'http://google.com')")
-      connection.exec("INSERT INTO bookmarks VALUES(3, 'http://destroyallsoftware.com')")
+      Bookmark.create(url: "http://makersacademy.com")
+      Bookmark.create(url: "http://google.com")
+      Bookmark.create(url: "http://destroyallsoftware.com")
 
       expected_bookmarks = [
         "http://makersacademy.com",
@@ -19,6 +19,14 @@ describe Bookmark do
       ]
 
       expect(Bookmark.all).to eq expected_bookmarks
+    end
+  end
+
+  describe '.create' do
+    it 'creates a new bookmark' do
+      Bookmark.create(url: 'http://testbookmark.com')
+
+      expect(Bookmark.all).to include 'http://testbookmark.com'
     end
   end
 
