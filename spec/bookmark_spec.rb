@@ -37,8 +37,10 @@ describe Bookmark do
 
   describe '#==' do
     it 'two Bookmarks are equal if their IDs match' do
-    p  bookmark_1 = Bookmark.new(1, url: 'http://test.com', title: 'test')
-    p  bookmark_2 = Bookmark.new(1, url: 'http://test.com', title: 'test')
+    p  options = { id: 1, url: 'http://test.com', title: 'test' }
+    #id needs to be stubbed properly - is currently having column id overriden when adding to table 
+    p  bookmark_1 = Bookmark.create(options)
+    p  bookmark_2 = Bookmark.create(options)
 
     p  expect(bookmark_1).to eq bookmark_2
     end
