@@ -32,8 +32,8 @@ describe Bookmark do
   end
 
   describe '#==' do
-    it 'two Bookmarks are equal if their IDs match' do
-    p  options = { id: 1, url: 'http://test.com', title: 'test' }
+    it 'two Bookmarks are equal if their url\'s match' do
+    p  options = { url: 'http://test.com', title: 'test' }
     #id needs to be stubbed properly - is currently having column id overriden when adding to table
     p  bookmark_1 = Bookmark.create(options)
     p  bookmark_2 = Bookmark.create(options)
