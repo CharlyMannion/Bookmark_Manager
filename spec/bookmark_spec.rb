@@ -40,4 +40,13 @@ describe Bookmark do
     end
   end
 
+  describe '.delete' do
+    it 'deletes a bookmark' do
+      bookmark = Bookmark.create(url: 'http://testbookmark.com', title: 'test')
+      Bookmark.delete(bookmark.id)
+      bookmarks = Bookmark.all
+      expect(bookmarks).not_to include 'http://testbookmark.com'
+    end
+  end
+
 end
