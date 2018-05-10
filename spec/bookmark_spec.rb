@@ -33,10 +33,10 @@ describe Bookmark do
 
   describe '#==' do
     it 'two Bookmarks are equal if their url\'s match' do
-    p  options = { url: 'http://test.com', title: 'test' }
-    p  bookmark_1 = Bookmark.create(options)
-    p  bookmark_2 = Bookmark.create(options)
-    p  expect(bookmark_1).to eq bookmark_2
+      options = { url: 'http://test.com', title: 'test' }
+      bookmark_1 = Bookmark.create(options)
+      bookmark_2 = Bookmark.create(options)
+      expect(bookmark_1).to eq bookmark_2
     end
   end
 

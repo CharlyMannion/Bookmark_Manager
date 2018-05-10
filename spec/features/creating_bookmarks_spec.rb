@@ -4,6 +4,7 @@ require 'pg'
 
 feature 'Adding a new bookmark' do
   scenario 'User adds a new bookmark to Bookmark Manager' do
+    connection = PG.connect(dbname: 'bookmark_manager_test')
     visit '/bookmarks/new'
     fill_in('url', with: 'http://testbookmark.com')
     fill_in('title', with: 'test')
@@ -11,6 +12,7 @@ feature 'Adding a new bookmark' do
     expect(page).to have_content 'test'
   end
   scenario 'User tries to add an invalid url to Bookmark Manager' do
+    connection = PG.connect(dbname: 'bookmark_manager_test')
     visit '/bookmarks/new'
     fill_in('url', with: 'not a valid url')
     click_button('Submit')
