@@ -9,8 +9,7 @@ feature 'Adding a new bookmark' do
     fill_in('title', with: 'test')
     click_button('Submit')
     expect(page).to have_content 'test'
-    end
-
+  end
   scenario 'User tries to add an invalid url to Bookmark Manager' do
     visit '/bookmarks/new'
     fill_in('url', with: 'not a valid url')
@@ -18,4 +17,4 @@ feature 'Adding a new bookmark' do
     expect(page).not_to have_content "not a valid url"
     expect(page).to have_content "invalid url"
   end
-  end
+end
