@@ -1,13 +1,8 @@
 ## Bookmark Manager
 
-
+A web app that stores web bookmarks in a database
 
 ### User Stories
-
-##Bookmark Manager
-
-User Stories
-------------
 
 ```sh
 As a user,
@@ -37,4 +32,26 @@ I want to filter my bookmarks by tag
 As a user,
 So I can manage my own bookmarks,
 I want to register and sign into my account.
+```
+
+### Getting Started
+
+Ruby Version:
+```sh
+2.5.0
+```
+
+Run:
+```sh
+bundle install
+```
+
+To see the app in your web browser:
+```sh
+rackup
+```
+
+Then go to:
+```sh
+http://localhost:9292/bookmarks/new
 ```
