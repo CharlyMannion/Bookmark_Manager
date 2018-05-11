@@ -49,6 +49,11 @@ describe Bookmark do
     end
   end
 
+  describe '.update' do
+    it 'updates the url' do
+      bookmark = Bookmark.create(url: 'http://testbookmark.com', title: 'test')
+      Bookmark.update(bookmark.id)
+
 end
 
 

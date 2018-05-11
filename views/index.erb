@@ -10,9 +10,13 @@
       <%= bookmark.title %>
     </a>
     <form action="/delete/<%= bookmark.id %>" method="post">
-      <input type="hidden" name-_"method" value ='DELETE'/>
+      <input type="hidden" name="_method" value ='DELETE'/>
       <input type="hidden" name="id" value="<%= bookmark.id %>">
-    <input type="submit" value ="Delete" />
+    <input type="submit" value="Delete" />
+  </form>
+  <form action="/update/<%= bookmark.id %>" method="put">
+    <input type="hidden" name="id" value="<%= bookmark.id %>">
+    <input type="submit" value="Update" />
   </form>
     </li>
   <%end%>

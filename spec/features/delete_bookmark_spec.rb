@@ -4,7 +4,6 @@ require 'pg'
 
 feature 'Delete a bookmark' do
   scenario 'delete a bookmark from the list' do
-    connection = PG.connect(dbname: 'bookmark_manager_test')
     Bookmark.create(url: "http://test.com", title: "Test")
     visit '/bookmarks'
 
