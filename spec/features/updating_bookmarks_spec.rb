@@ -8,7 +8,7 @@ feature 'Updating bookmark' do
     visit '/bookmarks'
     click_button 'Update'
     fill_in('url', with: 'http://newtest.com')
-    click_button('Submit')
-    expect(page).to have_link(href: "http://newtest.com")
+    click_button('Update url')
+    expect(page).to have_link(href: 'http://newtest.com')
   end
 end

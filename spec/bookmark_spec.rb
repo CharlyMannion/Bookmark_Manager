@@ -61,6 +61,14 @@ describe Bookmark do
     end
   end
 
+  describe '.find' do
+    it 'should find a bookmark' do
+    p  bookmark = Bookmark.create( url: 'http://testbookmark.com', title: 'test')
+    p  expect(Bookmark.find(bookmark.id)).to eq bookmark
+    end
+  end
+
+
 end
 
 

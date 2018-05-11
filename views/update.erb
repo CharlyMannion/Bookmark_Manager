@@ -1,8 +1,8 @@
-<form action="/update/<%= bookmark.id %>" method="put">
-  <input type="hidden" name="id" value="<%= bookmark.id %>">
+<form action="/update/<%= @bookmark.id %>" method="post">
+  <input type="hidden" name="id" value="<%= @bookmark.id %>">
   <label for="url">
     url
     <input type="text" name="url" />
   </label>
-  <input type="submit" value="Update" />
+  <input type="submit" value="Update url" />
 </form>

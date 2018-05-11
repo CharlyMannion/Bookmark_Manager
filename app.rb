@@ -31,11 +31,11 @@ class BookmarkManager < Sinatra::Base
   end
 
   get '/update/:id' do
-    @bookmark_id = params['id']
+    @bookmark = Bookmark.find(params['id'])
     erb(:update)
   end
 
-  put '/update/:id' do
+  post '/update/:id' do
     Bookmark.update(params['id'], params['url'])
     redirect '/bookmarks'
   end
