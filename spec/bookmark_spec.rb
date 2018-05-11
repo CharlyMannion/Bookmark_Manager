@@ -50,3 +50,6 @@ describe Bookmark do
   end
 
 end
+
+
+# need to extract bookmark instances/test setup - REFACTOR

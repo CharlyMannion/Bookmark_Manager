@@ -48,4 +48,8 @@ class Bookmark
   def self.is_url?(url)
     url =~ URI::regexp
   end
+
 end
+
+
+# need to extract env setup

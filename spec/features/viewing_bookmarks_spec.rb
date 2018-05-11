@@ -17,6 +17,4 @@ feature 'Viewing bookmarks' do
   expect(page).to have_content("Destroy")
 
   end
-
-  #test title should be link to webpage
 end
