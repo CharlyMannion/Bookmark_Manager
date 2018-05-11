@@ -52,7 +52,14 @@ describe Bookmark do
   describe '.update' do
     it 'updates the url' do
       bookmark = Bookmark.create(url: 'http://testbookmark.com', title: 'test')
-      Bookmark.update(bookmark.id)
+      new_url = 'http://testbookmark.co.uk'
+      Bookmark.update(bookmark.id, new_url)
+      bookmarks = Bookmark.all
+      urls = bookmarks.map(&:url)
+      expect(urls).not_to include 'http://testbookmark.com'
+      expect(urls).to include 'http://testbookmark.co.uk'
+    end
+  end
 
 end
 
